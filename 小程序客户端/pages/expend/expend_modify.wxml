@@ -1,0 +1,99 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+  <view class="title">编辑支出信息</view>
+
+  <view class="expend_modify_view">
+    <form bindsubmit="formSubmit">
+       <view class="formItem">
+        <view class="label">支出id：</view>
+        <view class="formControl">
+          <input type="text" name="expend.expendId" disabled="true" value="{{expendId}}" />
+        </view>
+      </view>
+      <view class="formItem">
+        <view class="label">支出类型：</view>
+        <view class="formControl">
+          <picker bindchange="bind_expendTypeObj_change" value="{{expendTypeObj_Index}}" range-key="expendTypeName" range="{{expendTypes}}">
+            <view style="display:flex;border:1px solid green;">
+              <input hidden="true" name="expend.expendTypeObj.expendTypeId" value="{{expendTypes[expendTypeObj_Index].expendTypeId}}" />
+              <input style="width:90%;border:0px;" value="{{expendTypes[expendTypeObj_Index].expendTypeName}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">支出用途：</view>
+        <view class="formControl">
+          <input type="text" name="expend.expendPurpose" placeholder="请输入支出用途" value="{{expendPurpose}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">支付方式：</view>
+        <view class="formControl">
+          <picker bindchange="bind_payWayObj_change" value="{{payWayObj_Index}}" range-key="payWayName" range="{{payWays}}">
+            <view style="display:flex;border:1px solid green;">
+              <input hidden="true" name="expend.payWayObj.payWayId" value="{{payWays[payWayObj_Index].payWayId}}" />
+              <input style="width:90%;border:0px;" value="{{payWays[payWayObj_Index].payWayName}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">支付账号：</view>
+        <view class="formControl">
+          <input type="text" name="expend.payAccount" placeholder="请输入支付账号" value="{{payAccount}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">支付金额：</view>
+        <view class="formControl">
+          <input type="text" name="expend.expendMoney" placeholder="请输入支付金额" value="{{expendMoney}}" />
+        </view>
+      </view>
+
+       <view class="formItem">
+        <view class="label">支付日期：</view>
+        <view class="formControl">
+          <picker mode="date"  start="1970-01-01" end="2030-01-01" value="{{expendDate}}" bindchange="bind_expendDate_change" >
+            <view style="display:flex;border:1px solid green;">
+              <input style="width:90%;border:0px;" name="expend.expendDate" placeholder="选择支付日期"  value="{{expendDate}}"></input>
+              <text class="clearButton" catchtap="clear_expendDate">x</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">用户：</view>
+        <view class="formControl">
+          <picker bindchange="bind_userInfoObj_change" value="{{userInfoObj_Index}}" range-key="name" range="{{userInfos}}">
+            <view style="display:flex;border:1px solid green;">
+              <input hidden="true" name="expend.userInfoObj.user_name" value="{{userInfos[userInfoObj_Index].user_name}}" />
+              <input style="width:90%;border:0px;" value="{{userInfos[userInfoObj_Index].name}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="formItem" style="align-items:flex-start;">
+        <view class="label">备忘信息：</view>
+        <view class="formControl">
+           <textarea placeholder="请输入备忘信息" maxlength="800" name="expend.memo" value="{{memo}}" />
+        </view>
+      </view>
+
+      <view>
+        <button class="vBtn_ok" formType="submit" disabled="{{disabled}}">提交修改</button>
+      </view>
+    </form>
+  </view>
+</view>

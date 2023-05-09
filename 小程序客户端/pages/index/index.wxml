@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+   <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="100%"/>
+            </swiper-item>
+        </block>
+    </swiper>
+  
+  <!--
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+
+  <view class="title">最新收入信息</view> 
+  <view class="incomeList">
+  <block wx:for-items="{{incomes}}" wx:key="{{index}}">
+    <view class="incomeItem">
+        <navigator url="income_detail?incomeId={{item.incomeId}}" hover-class="navigator-hover">
+        <view class="incomeText">
+          <view>收入类型：{{item.incomeTypeObj.incomeTypeName}}</view> 
+          <view>收入金额：{{item.incomeMoney}}</view>
+          <view>收入日期：{{item.incomeDate}}</view>
+          <view>收入人：{{item.userObj.name}}</view>
+        </view>
+        </navigator>
+    </view> 
+  </block>
+  </view>
+
+
+  <view class="title">最新支出信息</view>  
+  <view class="expendList">
+  <block wx:for-items="{{expends}}" wx:key="{{index}}">
+    <view class="expendItem">
+        <navigator url="expend_detail?expendId={{item.expendId}}" hover-class="navigator-hover">
+        <view class="expendText">
+          <view>支出类型：{{item.expendTypeObj.expendTypeName}}</view>
+          <view>支付金额：{{item.expendMoney}}</view>
+          <view>支付日期：{{item.expendDate}}</view> 
+          <view>支付人: {{item.userInfoObj.name}}</view>
+        </view>
+        </navigator>
+    </view>
+     
+  </block>
+  </view>
+
+  <view hidden="{{loading_hide}}" class="loading">
+    <view class="loadingImg"><image src="/images/loading.gif" mode="aspectFill"></image></view>
+    <view class="loadingTxt">..加载中..</view>
+  </view>
+
+  
+</view>

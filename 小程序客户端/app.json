@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/system/user",
+    "pages/system/about",
+    "pages/system/lianx",
+    "pages/userInfo/userInfo_add",
+    "pages/userInfo/userInfo_detail",
+    "pages/userInfo/userInfo_list",
+    "pages/userInfo/userInfo_modify",
+    "pages/incomeType/incomeType_add",
+    "pages/incomeType/incomeType_detail",
+    "pages/incomeType/incomeType_list",
+    "pages/incomeType/incomeType_modify",
+    "pages/income/income_add",
+    "pages/income/income_detail",
+    "pages/income/income_list",
+    "pages/income/income_modify",
+    "pages/expendType/expendType_add",
+    "pages/expendType/expendType_detail",
+    "pages/expendType/expendType_list",
+    "pages/expendType/expendType_modify",
+    "pages/expend/expend_add",
+    "pages/expend/expend_detail",
+    "pages/expend/expend_list",
+    "pages/expend/expend_modify",
+    "pages/payWay/payWay_add",
+    "pages/payWay/payWay_detail",
+    "pages/payWay/payWay_list",
+    "pages/payWay/payWay_modify",
+    "pages/notice/notice_add",
+    "pages/notice/notice_detail",
+    "pages/notice/notice_list",
+    "pages/notice/notice_modify",
+    "pages/mobile/mobile",
+    "pages/userInfo/userInfo_selfModify"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小程序客户端",
+    "navigationBarBackgroundColor": "#00AC2C",
+    "backgroundColor": "#EEEEEE",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#b7b7b7",
+    "selectedColor": "#00AC2C",
+    "borderStyle": "white",
+    "backgroundColor": "#f5f5f5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icons/icon_home.png",
+        "selectedIconPath": "images/icons/icon_home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/income/income_add",
+        "iconPath": "images/icons/icon_cate.png",
+        "selectedIconPath": "images/icons/icon_cate_selected.png",
+        "text": "登记收入"
+      },
+      {
+        "pagePath": "pages/expend/expend_add",
+        "iconPath": "images/icons/icon_cart.png",
+        "selectedIconPath": "images/icons/icon_cart_selected.png",
+        "text": "登记支出"
+      },
+      {
+        "pagePath": "pages/system/user",
+        "iconPath": "images/icons/icon_member.png",
+        "selectedIconPath": "images/icons/icon_member_selected.png",
+        "text": "个人"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

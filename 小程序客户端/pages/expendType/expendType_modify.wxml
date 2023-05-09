@@ -1,0 +1,27 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+  <view class="title">编辑支出类型</view>
+
+  <view class="expendType_modify_view">
+    <form bindsubmit="formSubmit">
+       <view class="formItem">
+        <view class="label">支出类型id：</view>
+        <view class="formControl">
+          <input type="text" name="expendType.expendTypeId" disabled="true" value="{{expendTypeId}}" />
+        </view>
+      </view>
+      <view class="formItem">
+        <view class="label">支出类型名称：</view>
+        <view class="formControl">
+          <input type="text" name="expendType.expendTypeName" placeholder="请输入支出类型名称" value="{{expendTypeName}}" />
+        </view>
+      </view>
+
+      <view>
+        <button class="vBtn_ok" formType="submit" disabled="{{disabled}}">提交修改</button>
+      </view>
+    </form>
+  </view>
+</view>

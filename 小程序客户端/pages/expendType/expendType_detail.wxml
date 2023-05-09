@@ -1,0 +1,27 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+
+  <view class="title">支出类型详情</view>
+  <view class="expendType_detail_view"> 
+      <view class="viewItem">
+        <view class="label">支出类型id：</view>
+        <view class="content">
+          <view>{{expendTypeId}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">支出类型名称：</view>
+        <view class="content"> 
+          <view>{{expendTypeName}}</view>
+        </view>
+      </view>
+
+      <view>
+        <navigator class="btnReturn" open-type="navigateBack" hover-class="navigator-hover">返回</navigator>
+      </view>
+
+  </view>
+</view>

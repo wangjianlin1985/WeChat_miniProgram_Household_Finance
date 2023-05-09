@@ -1,0 +1,76 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+
+  <view class="title">支出信息详情</view>
+  <view class="expend_detail_view"> 
+      <view class="viewItem">
+        <view class="label">支出id：</view>
+        <view class="content">
+          <view>{{expendId}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">支出类型：</view>
+        <view class="content"> 
+          <view>{{expendTypeObj}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">支出用途：</view>
+        <view class="content"> 
+          <view>{{expendPurpose}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">支付方式：</view>
+        <view class="content"> 
+          <view>{{payWayObj}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">支付账号：</view>
+        <view class="content"> 
+          <view>{{payAccount}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">支付金额：</view>
+        <view class="content"> 
+          <view>{{expendMoney}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">支付日期：</view>
+        <view class="content"> 
+          <view>{{expendDate}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">用户：</view>
+        <view class="content"> 
+          <view>{{userInfoObj}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">备忘信息：</view>
+        <view class="content"> 
+          <view>{{memo}}</view>
+        </view>
+      </view>
+
+      <view>
+        <navigator class="btnReturn" open-type="navigateBack" hover-class="navigator-hover">返回</navigator>
+      </view>
+
+  </view>
+</view>

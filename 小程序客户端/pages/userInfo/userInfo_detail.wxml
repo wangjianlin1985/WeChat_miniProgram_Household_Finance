@@ -1,0 +1,76 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+
+  <view class="title">家庭成员详情</view>
+  <view class="userInfo_detail_view"> 
+      <view class="viewItem">
+        <view class="label">亲友账号：</view>
+        <view class="content">
+          <view>{{user_name}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">登录密码：</view>
+        <view class="content"> 
+          <view>{{password}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">姓名：</view>
+        <view class="content"> 
+          <view>{{name}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">性别：</view>
+        <view class="content"> 
+          <view>{{sex}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">家庭关系：</view>
+        <view class="content"> 
+          <view>{{homeName}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">职业：</view>
+        <view class="content"> 
+          <view>{{workName}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">出生日期：</view>
+        <view class="content"> 
+          <view>{{birthday}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">用户照片：</view>
+        <view class="content"> 
+          <image mode="aspectFill" src="{{userPhotoUrl}}"></image>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">工作地址：</view>
+        <view class="content"> 
+          <view>{{address}}</view>
+        </view>
+      </view>
+
+      <view>
+        <navigator class="btnReturn" open-type="navigateBack" hover-class="navigator-hover">返回</navigator>
+      </view>
+
+  </view>
+</view>

@@ -1,0 +1,99 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+  <view class="title">编辑收入信息</view>
+
+  <view class="income_modify_view">
+    <form bindsubmit="formSubmit">
+       <view class="formItem">
+        <view class="label">收入id：</view>
+        <view class="formControl">
+          <input type="text" name="income.incomeId" disabled="true" value="{{incomeId}}" />
+        </view>
+      </view>
+      <view class="formItem">
+        <view class="label">收入类型：</view>
+        <view class="formControl">
+          <picker bindchange="bind_incomeTypeObj_change" value="{{incomeTypeObj_Index}}" range-key="incomeTypeName" range="{{incomeTypes}}">
+            <view style="display:flex;border:1px solid green;">
+              <input hidden="true" name="income.incomeTypeObj.incomeTypeId" value="{{incomeTypes[incomeTypeObj_Index].incomeTypeId}}" />
+              <input style="width:90%;border:0px;" value="{{incomeTypes[incomeTypeObj_Index].incomeTypeName}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">收入来源：</view>
+        <view class="formControl">
+          <input type="text" name="income.incomeFrom" placeholder="请输入收入来源" value="{{incomeFrom}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">支付方式：</view>
+        <view class="formControl">
+          <picker bindchange="bind_payWayObj_change" value="{{payWayObj_Index}}" range-key="payWayName" range="{{payWays}}">
+            <view style="display:flex;border:1px solid green;">
+              <input hidden="true" name="income.payWayObj.payWayId" value="{{payWays[payWayObj_Index].payWayId}}" />
+              <input style="width:90%;border:0px;" value="{{payWays[payWayObj_Index].payWayName}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">收入账号：</view>
+        <view class="formControl">
+          <input type="text" name="income.payAccount" placeholder="请输入收入账号" value="{{payAccount}}" />
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">收入金额：</view>
+        <view class="formControl">
+          <input type="text" name="income.incomeMoney" placeholder="请输入收入金额" value="{{incomeMoney}}" />
+        </view>
+      </view>
+
+       <view class="formItem">
+        <view class="label">收入日期：</view>
+        <view class="formControl">
+          <picker mode="date"  start="1970-01-01" end="2030-01-01" value="{{incomeDate}}" bindchange="bind_incomeDate_change" >
+            <view style="display:flex;border:1px solid green;">
+              <input style="width:90%;border:0px;" name="income.incomeDate" placeholder="选择收入日期"  value="{{incomeDate}}"></input>
+              <text class="clearButton" catchtap="clear_incomeDate">x</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="formItem">
+        <view class="label">用户：</view>
+        <view class="formControl">
+          <picker bindchange="bind_userObj_change" value="{{userObj_Index}}" range-key="name" range="{{userInfos}}">
+            <view style="display:flex;border:1px solid green;">
+              <input hidden="true" name="income.userObj.user_name" value="{{userInfos[userObj_Index].user_name}}" />
+              <input style="width:90%;border:0px;" value="{{userInfos[userObj_Index].name}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="formItem" style="align-items:flex-start;">
+        <view class="label">备注：</view>
+        <view class="formControl">
+           <textarea placeholder="请输入备注" maxlength="800" name="income.memo" value="{{memo}}" />
+        </view>
+      </view>
+
+      <view>
+        <button class="vBtn_ok" formType="submit" disabled="{{disabled}}">提交修改</button>
+      </view>
+    </form>
+  </view>
+</view>

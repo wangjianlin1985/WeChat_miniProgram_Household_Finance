@@ -1,0 +1,76 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+
+  <view class="title">收入信息详情</view>
+  <view class="income_detail_view"> 
+      <view class="viewItem">
+        <view class="label">收入id：</view>
+        <view class="content">
+          <view>{{incomeId}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">收入类型：</view>
+        <view class="content"> 
+          <view>{{incomeTypeObj}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">收入来源：</view>
+        <view class="content"> 
+          <view>{{incomeFrom}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">支付方式：</view>
+        <view class="content"> 
+          <view>{{payWayObj}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">收入账号：</view>
+        <view class="content"> 
+          <view>{{payAccount}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">收入金额：</view>
+        <view class="content"> 
+          <view>{{incomeMoney}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">收入日期：</view>
+        <view class="content"> 
+          <view>{{incomeDate}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">用户：</view>
+        <view class="content"> 
+          <view>{{userObj}}</view>
+        </view>
+      </view>
+
+       <view class="viewItem">
+        <view class="label">备注：</view>
+        <view class="content"> 
+          <view>{{memo}}</view>
+        </view>
+      </view>
+
+      <view>
+        <navigator class="btnReturn" open-type="navigateBack" hover-class="navigator-hover">返回</navigator>
+      </view>
+
+  </view>
+</view>

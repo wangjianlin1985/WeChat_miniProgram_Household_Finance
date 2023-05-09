@@ -1,0 +1,27 @@
+<view class="container">
+  <loading hidden="{{loadingHide}}">
+    {{loadingText}}
+  </loading>
+  <view class="title">编辑收入类型</view>
+
+  <view class="incomeType_modify_view">
+    <form bindsubmit="formSubmit">
+       <view class="formItem">
+        <view class="label">收入类别id：</view>
+        <view class="formControl">
+          <input type="text" name="incomeType.incomeTypeId" disabled="true" value="{{incomeTypeId}}" />
+        </view>
+      </view>
+      <view class="formItem">
+        <view class="label">收入类别名称：</view>
+        <view class="formControl">
+          <input type="text" name="incomeType.incomeTypeName" placeholder="请输入收入类别名称" value="{{incomeTypeName}}" />
+        </view>
+      </view>
+
+      <view>
+        <button class="vBtn_ok" formType="submit" disabled="{{disabled}}">提交修改</button>
+      </view>
+    </form>
+  </view>
+</view>

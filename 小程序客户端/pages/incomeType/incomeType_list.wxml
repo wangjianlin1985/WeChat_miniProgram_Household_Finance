@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="toggleQview" bindtap="toggleQueryViewHide" style="padding:5px;">显示或隐藏查询视图</view>
+  <view class="queryView" hidden="{{queryViewHidden}}">
+    <view class="queryParams">
+    </view>
+
+    <view class="queryButton">
+       <button class="font_12 fl_r op-btn mr_10" bindtap="queryIncomeType">查询</button>
+    </view>
+  </view>
+
+  <view class="incomeTypeList">
+  <block wx:for-items="{{incomeTypes}}" wx:key="{{index}}">
+    <view class="incomeTypeItem">
+        <navigator url="incomeType_detail?incomeTypeId={{item.incomeTypeId}}" hover-class="navigator-hover">
+        <view class="incomeTypeText">
+          <view>收入类别id：{{item.incomeTypeId}}</view>
+          <view>收入类别名称：{{item.incomeTypeName}}</view>
+        </view>
+        </navigator>
+    </view>
+    <view class="opt_view" style="display:none;">
+      <button class="font_12 fl_r del-btn mr_10" bindtap="removeIncomeType" data-incometypeid="{{item.incomeTypeId}}">删除</button> 
+      <navigator url="incomeType_modify?incomeTypeId={{item.incomeTypeId}}" hover-class="navigator-hover">
+        <button class="font_12 fl_r op-btn mr_10">编辑</button>
+      </navigator>
+    </view>
+  </block>
+  </view>
+
+  <view hidden="{{loading_hide}}" class="loading">
+    <view class="loadingImg"><image src="/images/loading.gif" mode="aspectFill"></image></view>
+    <view class="loadingTxt">..加载中..</view>
+  </view>
+  <view class="nodata_view" hidden="{{nodata_hide}}">
+    <image src="/images/Noline.png" mode="widthFix"></image>
+  </view>
+</view>
+

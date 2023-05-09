@@ -1,0 +1,101 @@
+<view class="container">
+  <view class="toggleQview" bindtap="toggleQueryViewHide" style="padding:5px;">显示或隐藏查询视图</view>
+  <view class="queryView" hidden="{{queryViewHidden}}">
+    <view class="queryParams">
+      <view class="queryItem">
+        <view class="label">支出类型：</view>
+        <view class="searchControl">
+          <picker bindchange="bind_expendTypeObj_change" value="{{expendTypeObj_Index}}" range-key="expendTypeName" range="{{expendTypes}}">
+            <view class="value" name="types">
+              <input style="width:75%;display:inline-block;float:left;" value="{{expendTypes[expendTypeObj_Index].expendTypeName}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="queryItem">
+        <view class="label">支出用途：</view>
+        <view class="searchControl"><input data-id="expendPurpose" placeholder="请输入支出用途关键字" value="{{expendPurpose}}" bindinput="searchValueInput" /></view>
+      </view>
+
+      <view class="queryItem">
+        <view class="label">支付方式：</view>
+        <view class="searchControl">
+          <picker bindchange="bind_payWayObj_change" value="{{payWayObj_Index}}" range-key="payWayName" range="{{payWays}}">
+            <view class="value" name="types">
+              <input style="width:75%;display:inline-block;float:left;" value="{{payWays[payWayObj_Index].payWayName}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="queryItem">
+        <view class="label">支付账号：</view>
+        <view class="searchControl"><input data-id="payAccount" placeholder="请输入支付账号关键字" value="{{payAccount}}" bindinput="searchValueInput" /></view>
+      </view>
+
+      <view class="queryItem">
+        <view class="label">支付日期：</view>
+         <view class="searchControl">
+          <picker mode="date" value="{{expendDate}}" start="1970-01-01" end="2030-01-01" bindchange="bind_expendDate_change" >
+            <view>
+              <input style="width:75%;display:inline-block;float:left;" placeholder="选择支付日期" value="{{expendDate}}"></input>
+              <text class="clearButton" catchtap="clear_expendDate">x</text>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+      <view class="queryItem" style="display:none;">
+        <view class="label">用户：</view>
+        <view class="searchControl">
+          <picker bindchange="bind_userInfoObj_change" value="{{userInfoObj_Index}}" range-key="name" range="{{userInfos}}">
+            <view class="value" name="types">
+              <input style="width:75%;display:inline-block;float:left;" value="{{userInfos[userInfoObj_Index].name}}"></input>
+              <image class="arrow-r" src="/images/arrow-r-0.png"></image>
+            </view>
+          </picker> 
+        </view>
+      </view>
+
+    </view>
+
+    <view class="queryButton">
+       <button class="font_12 fl_r op-btn mr_10" bindtap="queryExpend">查询</button>
+    </view>
+  </view>
+
+  <view class="expendList">
+  <block wx:for-items="{{expends}}" wx:key="{{index}}">
+    <view class="expendItem">
+        <navigator url="expend_detail?expendId={{item.expendId}}" hover-class="navigator-hover">
+        <view class="expendText">
+          <view>支出类型：{{item.expendTypeObj.expendTypeName}}</view>
+          <view>支出用途：{{item.expendPurpose}}</view>
+          <view>支付方式：{{item.payWayObj.payWayName}}</view>
+          <view>支付账号：{{item.payAccount}}</view>
+          <view>支付金额：{{item.expendMoney}}</view>
+          <view>支付日期：{{item.expendDate}}</view> 
+        </view>
+        </navigator>
+    </view>
+    <view class="opt_view">
+      <button class="font_12 fl_r del-btn mr_10" bindtap="removeExpend" data-expendid="{{item.expendId}}">删除</button> 
+      <navigator url="expend_modify?expendId={{item.expendId}}" hover-class="navigator-hover">
+        <button class="font_12 fl_r op-btn mr_10">编辑</button>
+      </navigator>
+    </view>
+  </block>
+  </view>
+
+  <view hidden="{{loading_hide}}" class="loading">
+    <view class="loadingImg"><image src="/images/loading.gif" mode="aspectFill"></image></view>
+    <view class="loadingTxt">..加载中..</view>
+  </view>
+  <view class="nodata_view" hidden="{{nodata_hide}}">
+    <image src="/images/Noline.png" mode="widthFix"></image>
+  </view>
+</view>
+
